@@ -6,7 +6,7 @@ import sys
 sys.path.append('.')
 from src.q5 import filter_lines_containing
 
-def test_filter_lines_containing() -> None:
+def test_filter_lines_containing_to_file() -> None:
     """Test that only lines containing the keyword are written to the output file."""
     test_input_filepath = "test_file.txt"
     test_output_filepath = "output_file.txt"

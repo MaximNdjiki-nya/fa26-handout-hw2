@@ -7,7 +7,7 @@ sys.path.append('.')
 from src.q4 import filter_lines_containing
 
 @patch("builtins.print")
-def test_filter_lines_containing(mock_print: MagicMock) -> None:
+def test_filter_lines_containing_to_print(mock_print: MagicMock) -> None:
     """Test that only lines containing the keyword are printed."""
     test_filepath = "test_file.txt"
     test_keyword = "keyword"
