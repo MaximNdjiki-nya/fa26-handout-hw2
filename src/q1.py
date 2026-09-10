@@ -1,18 +1,16 @@
-"""HW1 Question 1
+"""HW2 Question 1
 
-Tell us about your interest in computing!
+Please implement the function below to match the documentation.
 
-This question is intentionally open-ended. To get full points on this question, 
-modify the function below to print a sentence or two about your interests,
-goals, or anything that brings you to this course.
+This is the only question in this assignment where you are required to write tests.
+Tests for all other questions are provided for you this time."""
 
-You may rename the function, add comments, or make any other modifications.
-The file must still work as a valid Python file after your modifications.
+from typing import Optional
 
-Getting your setup ready is the hardest part of the semester.
-This question is designed to give you points for getting your GitHub and 
-Pawtograder setup working, and making a successful submission."""
-
-def print_meow() -> None:
-    """Prints 'meow' to the console."""
-    print("meow")
+def combine_optional_strings(str_a: Optional[str], str_b: Optional[str]) -> Optional[str]:
+    """
+    Concatenates two strings with a space in between if both are present.
+    If only one string is present, return that one by itself. If both are None,
+    return None.
+    """
+    pass

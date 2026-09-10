@@ -1,30 +1,22 @@
-"""HW1 Question 2 Tests"""
+"""HW2 Question 2 Tests"""
 
+from unittest.mock import MagicMock, patch
 import sys
 
 sys.path.append('.')
-from src.q2 import validate_password
+from src.q2 import get_positive_number
 
-def test_validate_password_valid() -> None:
-    """Test that a valid password passes validation."""
-    assert validate_password("Password1!")
+@patch('builtins.input', return_value='5')
+def test_get_positive_number_first_try(_: MagicMock) -> None:
+    """Test that get_positive_number returns the correct value on the first try."""
+    assert get_positive_number() == 5.0
 
-def test_validate_password_no_uppercase() -> None:
-    """Test that a password with no uppercase letters fails validation."""
-    assert not validate_password("password1!")
+@patch('builtins.input', side_effect=['-1', '0', '5'])
+def test_get_positive_number_third_try(_: MagicMock) -> None:
+    """Test that get_positive_number returns the correct value after two negative tries."""
+    assert get_positive_number() == 5.0
 
-def test_validate_password_no_lowercase() -> None:
-    """Test that a password with no lowercase letters fails validation."""
-    assert not validate_password("PASSWORD1!")
-
-def test_validate_password_no_digit() -> None:
-    """Test that a password with no digits fails validation."""
-    assert not validate_password("Password!")
-
-def test_validate_password_no_special_char() -> None:
-    """Test that a password with no special characters fails validation."""
-    assert not validate_password("Password1")
-
-def test_validate_password_too_short() -> None:
-    """Test that a password that is too short fails validation."""
-    assert not validate_password("Pass1!")
+@patch('builtins.input', side_effect=['hello', '5'])
+def test_get_positive_number_non_numerical_then_valid(_: MagicMock) -> None:
+    """Test that get_positive_number returns the correct value after a non-numerical input."""
+    assert get_positive_number() == 5.0

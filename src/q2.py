@@ -1,27 +1,15 @@
-"""HW1 Question 2
+"""HW2 Question 2
 
-Please implement the following function according to the provided documentation.
-Tests are provided for this question in the file tests/test_q2.py."""
+Please implement the function below to match the documentation."""
 
-def validate_password(password: str) -> bool:
-    """Determines whether a password meets the requirements.
+def get_positive_number() -> float:
+    """
+    Repeatedly prompt the user to enter a number until they enter one that 
+    is greater than 0. Reject anything that isn't a valid number (catch the 
+    ValueError) and anything <= 0, printing a message and asking again. Return
+    the number as a float.
 
-    Requirements:
-    1. Password must be at least 8 characters long
-    2. Password must contain at least one uppercase letter
-    3. Password must contain at least one lowercase letter
-    4. Password must contain at least one digit
-    5. Password must contain at least one special character (!@#$%^&*)
-
-    
-    Parameters
-    ----------
-    password : str
-        The password to validate
-    
-    Returns
-    -------
-    bool
-        True if the password is valid, and false otherwise
+    Returns:
+        float: A positive number entered by the user.
     """
     pass
