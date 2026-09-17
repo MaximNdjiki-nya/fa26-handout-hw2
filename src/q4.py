@@ -7,5 +7,11 @@ def filter_lines_containing(filepath: str, keyword: str) -> None:
     Read the file at `filepath` and print only the lines that contain `keyword`
     as a substring (case-insensitive), in their original order. Ignore lines that 
     do not contain the keyword.
+
+    Parameters:
+        filepath : str
+            The path to the file to be read
+        keyword : str
+            The keyword to search for within the file lines
     """
     pass

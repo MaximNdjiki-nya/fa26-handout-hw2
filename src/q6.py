@@ -27,6 +27,12 @@ def play_madlibs(template_filepath: str, output_filepath: str) -> None:
         "I have a fluffy dog."
 
     Whitespace, punctuation, and capitalization will be preserved for all non-placeholder text.
+
+    Parameters:
+        template_filepath : str
+            The path to the Mad Libs template file to be read
+        output_filepath : str
+            The path to the output file to be written
     """
     pass
 

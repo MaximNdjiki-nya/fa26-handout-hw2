@@ -2,12 +2,16 @@
 
 Please implement the function below to match the documentation."""
 
-def get_positive_number() -> float:
+def get_positive_number(prompt: str) -> float:
     """
     Repeatedly prompt the user to enter a number until they enter one that 
     is greater than 0. Reject anything that isn't a valid number (catch the 
-    ValueError) and anything <= 0, printing a message and asking again. Return
-    the number as a float.
+    ValueError) and anything <= 0. Return the number as a float.
+
+    Parameters:
+        prompt : str
+            The prompt to be printed to ask the user to enter a positive number.
+            Example: "Please enter a positive number: "
 
     Returns:
         float: A positive number entered by the user.
