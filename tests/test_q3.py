@@ -45,7 +45,7 @@ def test_get_max_num_all_invalid(_: MagicMock) -> None:
 
 @patch('builtins.input', side_effect=['-1', 'hello', '5', ''])
 @patch('builtins.print')
-def test_prompt_is_printed(mock_print: MagicMock, mock_input: MagicMock) -> None:
+def test_get_max_num_prompt_is_printed(mock_print: MagicMock, mock_input: MagicMock) -> None:
     """Test that the prompt string is sent to either input or print."""
     prompt = "Please enter a positive number: "
     get_max_num(prompt, "")

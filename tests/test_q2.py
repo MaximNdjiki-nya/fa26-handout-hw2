@@ -23,7 +23,7 @@ def test_get_positive_number_non_numerical_then_valid(_: MagicMock) -> None:
 
 @patch('builtins.input', side_effect=['-1', 'hello', '5'])
 @patch('builtins.print')
-def test_prompt_is_printed(mock_print: MagicMock, mock_input: MagicMock) -> None:
+def test_get_positive_number_prompt_is_printed(mock_print: MagicMock, mock_input: MagicMock) -> None:
     """Test that the prompt string is sent to either input or print."""
     prompt = "Please enter a positive number: "
     get_positive_number(prompt)
