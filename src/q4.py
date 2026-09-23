@@ -27,4 +27,11 @@ def get_lines_containing(filepath: str, keyword: str) -> str:
         str
             The lines from the file that contain the keyword, in their original order.
     """
-    pass
+    result = ""
+
+    with open(filepath, "r", encoding="utf-8") as file:
+        for line in file:
+            if keyword.lower() in line.lower():
+                result += line
+
+    return result

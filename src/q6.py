@@ -34,7 +34,31 @@ def play_madlibs(template_filepath: str, output_filepath: str) -> None:
         output_filepath : str
             The path to the output file to be written
     """
-    pass
+    with open(template_filepath, "r", encoding="utf-8") as file:
+        template = file.read()
+
+    complete_story = ""
+    index = 0
+
+    while index < len(template):
+
+        if template[index] == "{":
+         end_story = template.find("}", index)
+
+         placeholder_name = template[index + 1:end_story]
+
+         response = input( "Please provide a " + placeholder_name + ": ")
+
+         complete_story += response
+         index = end_story + 1
+
+        else:
+            complete_story += template[index]
+            index += 1
+
+            with open(output_filepath, "w", encoding="utf-8") as file:
+                file.write(complete_story)
+
 
 if __name__ == "__main__":
-    play_madlibs("story_with_placeholders.txt", "output_story.txt")
+    play_madlibs("story_with_placeholder.txt", "output_story.txt")

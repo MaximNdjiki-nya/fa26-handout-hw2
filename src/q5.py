@@ -20,4 +20,7 @@ def filter_lines_containing(input_filepath: str, output_filepath: str, keyword: 
         keyword : str
             The keyword to search for within the file lines
     """
-    pass
+    matching_lines = get_lines_containing(input_filepath, keyword)
+
+    with open(output_filepath, "w", encoding="utf-8") as file:
+        file.write(matching_lines)

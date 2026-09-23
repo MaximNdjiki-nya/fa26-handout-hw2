@@ -25,6 +25,3 @@ def get_positive_number(prompt: str) -> float:
             response = 0.0
     return response
 
-num = get_positive_number("Enter dat Numba: ")
-
-print(num)

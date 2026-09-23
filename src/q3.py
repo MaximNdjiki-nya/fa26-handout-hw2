@@ -23,4 +23,21 @@ def get_max_num(prompt: str, end_indicator: str) -> Optional[float]:
         Optional[float]: The maximum number entered by the user, or None if no 
                 valid numbers were entered.
     """
-    pass
+    max_num = None
+
+    while True:
+        user_input = input(prompt)
+
+        if user_input == end_indicator:
+            break
+
+        try:
+            number = float(user_input)
+
+            if max_num is None or number > max_num:
+                max_num = number
+
+        except ValueError:
+            print("Please enter a valid number")
+
+    return max_num
