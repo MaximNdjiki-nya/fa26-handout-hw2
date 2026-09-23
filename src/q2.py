@@ -16,4 +16,15 @@ def get_positive_number(prompt: str) -> float:
     Returns:
         float: A positive number entered by the user.
     """
-    pass
+    response = 0.0
+    while response <= 0:
+        try:
+            response = float(input(prompt))
+        except ValueError:
+            print("Please enter a valid number")
+            response = 0.0
+    return response
+
+num = get_positive_number("Enter dat Numba: ")
+
+print(num)

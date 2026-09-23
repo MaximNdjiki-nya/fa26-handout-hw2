@@ -13,4 +13,13 @@ def combine_optional_strings(str_a: Optional[str], str_b: Optional[str]) -> Opti
     If only one string is present, return that one by itself. If both are None,
     return None.
     """
-    pass
+    result: Optional[str]
+    if str_a is not None and str_b is not None:
+        result = str_a + " " + str_b
+    elif str_a is not None:
+        result = str_a
+    elif str_b is not  None:
+        result = str_b
+    else:
+        result = None
+    return result
